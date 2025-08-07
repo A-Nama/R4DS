@@ -1,0 +1,44 @@
+>gender<-c(1,2,1,2,1,2,1,2)
+> gender<-factor(gender)
+> table(gender)
+gender
+1 2 
+4 4 
+
+> gender<-factor(gender,levels=c(1,2),labels = c("male", "female"))
+> table(gender)
+gender
+  male female 
+     4      4 
+
+    > emp.data<-data.frame(
++ emp_id=c(1:5),
++ emp_name=c("Rick", "Dan", "Michelle", "Ryan", "Gary"),
++ salary=c(623.3, 515.2,611.0,729.0, 843.0),
++ start_date=as.Date(c("2012-03-10","2012-05-06", "2013-09-09", "2013-02-02", "2012-06-05")),
++ stringAsFactors=FALSE)
+> print(emp.data)
+  emp_id emp_name salary start_date stringAsFactors
+1      1     Rick  623.3 2012-03-10           FALSE
+2      2      Dan  515.2 2012-05-06           FALSE
+3      3 Michelle  611.0 2013-09-09           FALSE
+4      4     Ryan  729.0 2013-02-02           FALSE
+5      5     Gary  843.0 2012-06-05           FALSE
+> print(summary(emp.data))
+     emp_id    emp_name             salary        start_date         stringAsFactors
+ Min.   :1   Length:5           Min.   :515.2   Min.   :2012-03-10   Mode :logical  
+ 1st Qu.:2   Class :character   1st Qu.:611.0   1st Qu.:2012-05-06   FALSE:5        
+ Median :3   Mode  :character   Median :623.3   Median :2012-06-05                  
+ Mean   :3                      Mean   :664.3   Mean   :2012-09-30                  
+ 3rd Qu.:4                      3rd Qu.:729.0   3rd Qu.:2013-02-02                  
+ Max.   :5                      Max.   :843.0   Max.   :2013-09-09                  
+> emp.data$dept<-c("IT", "HR", "Marketing", "Finance", "CS")
+> v<-emp.data
+> print(v)
+  emp_id emp_name salary start_date stringAsFactors      dept
+1      1     Rick  623.3 2012-03-10           FALSE        IT
+2      2      Dan  515.2 2012-05-06           FALSE        HR
+3      3 Michelle  611.0 2013-09-09           FALSE Marketing
+4      4     Ryan  729.0 2013-02-02           FALSE   Finance
+5      5     Gary  843.0 2012-06-05           FALSE        CS
+> 
